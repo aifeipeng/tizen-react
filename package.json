@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "dashjs": "^4.7.4",
     "react": "^18.3.1",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.3.1",
@@ -13,8 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp tizen/* build && tizen build-web -- build && tizen package -t wgt -s default -- build/.buildResult",
-    "deploy": "tizen install -n ReactTizen.wgt -- build/.buildResult",
+    "build": "react-scripts build && cp tizen/* build && tizen build-web -- build && tizen package -t wgt -s certificate3 -- build/.buildResult",
+    "deploy": "tizen install -n basic.wgt -- build/.buildResult",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
