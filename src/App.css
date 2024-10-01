@@ -24,6 +24,41 @@
   color: white;
 }
 
+
+.videoElementWrapper {
+  width: 100% ;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoElementStyles {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  background: black;
+  display: block;
+  outline: none;
+
+  
+}
+
+.titleElement {
+z-index: 2;
+width: 100%;
+height: 100%;
+position: absolute;
+background-color: black;
+align-content: center;
+animation: fade 3s;
+    -moz-animation: fade 3s; /* Firefox */
+    -webkit-animation: fade 3s; 
+    
+    
+
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -34,5 +69,47 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+@keyframes fade {
+  0% {
+      opacity:0;
+  }
+  50% {
+      opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+@-webkit-keyframes fade { /* Safari and Chrome */
+  0% {
+    opacity:0;
+}
+50% {
+    opacity:1;
+}
+100% {
+  opacity:0;
+}
+}
+
+@keyframes fadeout {
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
+  }
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
   }
 }
