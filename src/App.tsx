@@ -70,7 +70,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <div className="videoElementWrapper">
           {listPos < videoList.length && shouldShowTitle && (
             <div className="titleElement">{videoList[listPos]?.title}</div>
@@ -82,7 +81,6 @@ function App() {
             controls
           />
         </div>
-      </header>
     </div>
   );
 }
