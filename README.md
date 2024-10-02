@@ -7,10 +7,10 @@ There are several steps to make this project work on a Tizen emulator or TV.
 ## Configuring Tizen Studio and your device
 
 - Install [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
-- In Tizen Studio, use the Package Manager (Tools › Package Manager or <kbd>Alt + Shift + P</kbd>) to install all tizen related software, also install the emulator and the TV certificate.
+- In Tizen Studio, use the Package Manager (Tools › Package Manager or open the Package Manager directly e.g from your start menu) to install all tizen related software, also install the emulator and the TV certificate.
 - Close the Package Manager and launch Tizen Studio (it might request you to set your workspace folder, you can choose any folder you want)
 - Start your emulator manager and start a TV emulator
-- Generate a new Samsung certificate using the Certificate Manager (Tools › Certificate Manager or <kbd>Alt + Shift + C</kbd>).
+- Generate a new Samsung certificate using the Certificate Manager (Tools › Certificate Manager).
   - Select "Samsung" certificate
   - Select "TV" device type
   - Select "Create a new certificate profile" and name it (we will need this name later)
@@ -37,10 +37,11 @@ There are several steps to make this project work on a Tizen emulator or TV.
   <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <access origin="*" subdomains="true"/> <!--For any url-->
     `
-- Before building the project for the first time, edit the `build` and `deploy` scripts in the `package.json` file:
+- If you created a new `config.xml` file from tizen studio then follow this step. Before building the project for the first time, edit the `build` and `deploy` scripts in the `package.json` file:
   - Replace `tizen.bat` with `tizen` if necessary (if you are running a unix system)
   - In the `tizen package -t wgt -s default -- build/.buildResult` command, replace `default` with the name you gave to your certificate
   - In the `tizen install -n ReactTizen.wgt -- build/.buildResult` command, replace `ReactTizen.wgt` with the name you gave to your application like so `name.wgt` in the `config.xml`
+  - In the `tizen run -p zcg9aVwl3M.basic` command, replace `zcg9aVwl3M.basic` with the id of you application, it can be found in your `config.xml`.
 - Run the following command to build the project:
   ```bash
   yarn build
@@ -55,8 +56,7 @@ There are several steps to make this project work on a Tizen emulator or TV.
   yarn deploy
   ```
   This will upload the `*.wgt` to the device and install it. You can then find the app in the "Apps" section of your TV to launch it.
-- Run the following command to run the installed application on the emulator:
+- Run the following command to run the installed application on the emulator (make sure your emulator is running before running the command):
   ```bash
-  tizen run -p id
+  yarn emulate
   ```
-The id can be found in config.xml.
