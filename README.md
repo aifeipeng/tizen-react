@@ -1,4 +1,4 @@
-# React Tizen with dashjs
+# Tizen React with dashjs
 
 This project is based on [Create React App](https://github.com/facebook/create-react-app) with a dashjs player
 
