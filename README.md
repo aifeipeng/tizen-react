@@ -25,7 +25,7 @@ There are several steps to make this project work on a Tizen emulator or TV.
 ## Building and installing this project
 
 - Make sure that the `tizen` or `tizen.bat` CLI is available in your shell path. It is configurable by commands found [here](https://developer.tizen.org/ko/development/tizen-studio/web-tools/cli?langredirect=1)
-- Create a `config.xml` in the `tizen` folder. This can be done by creating a new Tizen project in Tizen Studio.
+- This step should not be needed but if there is a problem this can be tried. Create a `config.xml` in the `tizen` folder. This can be done by creating a new Tizen project in Tizen Studio.
   - Create a new Tizen Project
   - Select "Template"
   - Select "TV"
@@ -33,6 +33,10 @@ There are several steps to make this project work on a Tizen emulator or TV.
   - Select "Empty" or "Basic" project
   - Choose a name and click finish
   - Once the project is generated, copy the `config.xml` file to the `tizen` folder of this project
+  - add these lines to the config.xml `
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <access origin="*" subdomains="true"/> <!--For any url-->
+    `
 - Before building the project for the first time, edit the `build` and `deploy` scripts in the `package.json` file:
   - Replace `tizen.bat` with `tizen` if necessary (if you are running a unix system)
   - In the `tizen package -t wgt -s default -- build/.buildResult` command, replace `default` with the name you gave to your certificate
