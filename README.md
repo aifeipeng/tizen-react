@@ -1,6 +1,6 @@
-# React Tizen
+# React Tizen with dashjs
 
-This project is based on [Create React App](https://github.com/facebook/create-react-app) 
+This project is based on [Create React App](https://github.com/facebook/create-react-app) with a dashjs player
 
 There are several steps to make this project work on a Tizen emulator or TV.
 
