@@ -37,11 +37,11 @@ There are several steps to make this project work on a Tizen emulator or TV.
   <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <access origin="*" subdomains="true"/> <!--For any url-->
     `
-- If you created a new `config.xml` file from tizen studio then follow this step. Before building the project for the first time, edit the `build` and `deploy` scripts in the `package.json` file:
+- Before building the project for the first time, edit the `build` and `deploy` scripts in the `package.json` file:
   - Replace `tizen.bat` with `tizen` if necessary (if you are running a unix system)
   - In the `tizen package -t wgt -s default -- build/.buildResult` command, replace `default` with the name you gave to your certificate
-  - In the `tizen install -n ReactTizen.wgt -- build/.buildResult` command, replace `ReactTizen.wgt` with the name you gave to your application like so `name.wgt` in the `config.xml`
-  - In the `tizen run -p zcg9aVwl3M.basic` command, replace `zcg9aVwl3M.basic` with the id of you application, it can be found in your `config.xml`.
+  - If you created a new `config.xml` file from tizen studio then follow this step. In the `tizen install -n ReactTizen.wgt -- build/.buildResult` command, replace `ReactTizen.wgt` with the name you gave to your application like so `name.wgt` in the `config.xml`
+  - If you created a new `config.xml` file from tizen studio then follow this step. In the `tizen run -p zcg9aVwl3M.basic` command, replace `zcg9aVwl3M.basic` with the id of you application, it can be found in your `config.xml`.
 - Run the following command to build the project:
   ```bash
   yarn build
